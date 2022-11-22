@@ -2,6 +2,6 @@
 
 <ul>
 <% @chefs.each do |chef| %>
-<li><%= chef.details %> <%= chef.cuisine %> </li>
+<li><%= chef.details %> <%= chef.cuisine %> <%= link_to("Chef profile", chef_path(chef)) %></li>
 <% end %>
 </ul>

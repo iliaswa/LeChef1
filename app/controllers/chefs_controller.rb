@@ -1,5 +1,6 @@
 class ChefsController < ApplicationController
 before_action :set_chef, only: [:show, :edit, :update, :destroy]
+before_action :set_user, only: [:new, :create]
 
   def index
     @chefs = Chef.all
@@ -14,6 +15,7 @@ before_action :set_chef, only: [:show, :edit, :update, :destroy]
 
   def create
     @chef = Chef.new(strong_params)
+    @chef.user = @user
     @chef.save! # Will raise ActiveModel::ForbiddenAttributesError
     redirect_to chef_path(@chef)
   end
@@ -22,8 +24,13 @@ before_action :set_chef, only: [:show, :edit, :update, :destroy]
     @chef.destroy!
     redirect_to chefs_path, status: :see_other
   end
+end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def set_chef
     @chef = Chef.find(params[:id])
@@ -32,5 +39,3 @@ before_action :set_chef, only: [:show, :edit, :update, :destroy]
   def strong_params
     params.require(:chef).permit(:details, :cuisine, :availability)
   end
-
-end
