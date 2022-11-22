@@ -1,0 +1,13 @@
+<h1>User Page</h1>
+
+<%= @user.first_name %>
+<%= @user.last_name %>
+
+<ol>
+  <% @user.bookings.each do |b| %>
+    <li>
+      <%= b.chef.user.first_name %>
+      <%= b.description %>
+    </li>
+  <% end %>
+</ol>
