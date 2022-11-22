@@ -1,13 +1,14 @@
-<h1>User Page</h1>
+<h1>Welcome, <%= @user.first_name %></h1>
 
-<%= @user.first_name %>
-<%= @user.last_name %>
+
 
 <ol>
-  <% @user.bookings.each do |b| %>
+<strong>Upcoming bookings</strong>
+  <% current_user.bookings.each do |b| %>
     <li>
-      <%= b.chef.user.first_name %>
-      <%= b.description %>
+     Chef <%= b.chef.user.first_name %> | Details:
     </li>
+    <p><%= b.description %></p>
+    <p><%= link_to "Cancel booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
   <% end %>
 </ol>
