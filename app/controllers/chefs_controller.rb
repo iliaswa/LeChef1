@@ -5,21 +5,32 @@ before_action :set_chef, only: [:show, :edit, :update, :destroy]
     @chefs = Chef.all
   end
 
-  # def show
+  def show
+  end
 
-  # end
+  def new
+    @chef = Chef.new
+  end
 
-  # def new
-  # end
+  def create
+    @chef = Chef.new(strong_params)
+    @chef.save! # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to chef_path(@chef)
+  end
 
-  # def create
-  # end
+  def destroy
+    @chef.destroy!
+    redirect_to chefs_path, status: :see_other
+  end
 
-  # def destroy
-  # end
+  private
 
-  # private
+  def set_chef
+    @chef = Chef.find(params[:id])
+  end
 
-
+  def strong_params
+    params.require(:chef).permit(:details, :cuisine, :availability)
+  end
 
 end
