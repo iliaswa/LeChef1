@@ -1,4 +1,9 @@
+<div class="container">
+<h1>Create your booking</h1>
+<p>Please let your chef know about your occasion for your booking using the form below</p>
+
 <%= simple_form_for [@chef, @booking] do |f| %>
   <%= f.input :description %>
   <%= f.submit "Create Booking", class: "btn btn-primary" %>
 <% end %>
+</div>
