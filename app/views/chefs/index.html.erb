@@ -1,7 +1,41 @@
-<h1>Chefs</h1>
+<div class="Header text-center">
+<h3></h3>
+</div class>
+<div class="container">
+  <div class="cards">
+    <%# <%= link_to chef_path(chef)  do
 
-<ul>
+    end %>
+    <div class="square" style="background-image: url(https://playswellwithbutter.com/wp-content/uploads/2020/12/Individual-Beef-Wellington-27.jpg)">
+    <h2>Chef Gordon</h2>
+    <p>British</p>
+    </div>
+    <div class="square" style="background-image: url(https://www.visitbuckinghamshire.org/cache/public/article-images-1510659824-a056cf650d824b3a4ec02528ec31f762-CROP-600x450.jpg)">
+    <h2>Chef Michael</h2>
+    <p>British</p>
+    </div>
+    <div class="square" style="background-image: url(https://francemotorhomehire.com/wp-content/uploads/2017/12/gourmet-food.jpg)">
+    <h2>Chef Michel</h2>
+    <p>French</p>
+    </div>
+    <div class="square" style="background-image: url(https://i0.wp.com/beastmag.co.uk/wp-content/uploads/2020/02/Indian-food--scaled.jpg?resize=2000%2C1200&ssl=1)">
+    <h2>Chef Atul</h2>
+    <p>Indian</p>
+    </div>
+    <div class="square" style="background-image: url(https://media.timeout.com/images/105604990/750/422/image.jpg)">
+    <h2>Chef Angela</h2>
+    <p>Italian</p>
+    </div>
+    <div class="square" style="background-image: url(https://media.timeout.com/images/105544382/750/422/image.jpg)">
+    <h2>Chef Gennaro</h2>
+    <p>Italian</p>
+    </div>
+  </div>
+</div>
+<%# <ul>
 <% @chefs.each do |chef| %>
-<li><%= chef.details %> <%= chef.cuisine %> <%= link_to("Chef profile", chef_path(chef)) %></li>
-<% end %>
-</ul>
+<%# <li><%= chef.details <%= chef.cuisine %>
+ <%# <%= link_to("Chef profile", chef_path(chef)) %>
+ <%# </li> %>
+<%# <% end %>
+<%# </ul> %>
