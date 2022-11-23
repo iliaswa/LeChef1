@@ -1,6 +1,6 @@
 class ChefsController < ApplicationController
-before_action :set_chef, only: [:show, :edit, :update, :destroy]
-before_action :set_user, only: [:new, :create]
+  before_action :set_chef, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:new, :create]
 
   def index
     @chefs = Chef.all
@@ -24,7 +24,6 @@ before_action :set_user, only: [:new, :create]
     @chef.destroy!
     redirect_to chefs_path, status: :see_other
   end
-end
 
   private
 
@@ -39,3 +38,4 @@ end
   def strong_params
     params.require(:chef).permit(:details, :cuisine, :availability)
   end
+end

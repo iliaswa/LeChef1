@@ -1,7 +1,67 @@
-<h1>Chefs</h1>
+<div class="Header text-center">
+<h3></h3>
+</div class>
+<div class="container">
+  <div class="cards">
+    <%# <%= link_to chef_path(chef)  do
 
-<ul>
+
+    end %>
+    <div class="card" style="width: 18rem;">
+      <img src="https://playswellwithbutter.com/wp-content/uploads/2020/12/Individual-Beef-Wellington-27.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Gordon</h5>
+          <p class="card-text">Cuisine: British</p>
+          <a href="http://lechef1.herokuapp.com/chefs/1" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://francemotorhomehire.com/wp-content/uploads/2017/12/gourmet-food.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Michel</h5>
+          <p class="card-text">Cuisine: French</p>
+          <a href="http://lechef1.herokuapp.com/chefs/2" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://media.timeout.com/images/105604990/750/422/image.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Angela</h5>
+          <p class="card-text">Cuisine: Italian</p>
+          <a href="http://lechef1.herokuapp.com/chefs/3" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://media.timeout.com/images/105544382/750/422/image.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Gino</h5>
+          <p class="card-text">Cuisine: Italian</p>
+          <a href="http://lechef1.herokuapp.com/chefs/4" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://i0.wp.com/beastmag.co.uk/wp-content/uploads/2020/02/Indian-food--scaled.jpg?resize=2000%2C1200&ssl=1" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Atul</h5>
+          <p class="card-text">Cuisine: Indian</p>
+          <a href="http://lechef1.herokuapp.com/chefs/5" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://www.visitbuckinghamshire.org/cache/public/article-images-1510659824-a056cf650d824b3a4ec02528ec31f762-CROP-600x450.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chef Michael</h5>
+          <p class="card-text">Cuisine: British</p>
+          <a href="http://lechef1.herokuapp.com/chefs/6" class="btn btn-primary stretched-link">View Profile</a>
+       </div>
+    </div>
+
+
+
+<%# <ul>
 <% @chefs.each do |chef| %>
-<li><%= chef.details %> <%= chef.cuisine %> <%= link_to("Chef profile", chef_path(chef)) %></li>
-<% end %>
-</ul>
+<%# <li><%= chef.details <%= chef.cuisine %>
+ <%# <%= link_to("Chef profile", chef_path(chef)) %>
+ <%# </li> %>
+<%# <% end %>
+<%# </ul> %>

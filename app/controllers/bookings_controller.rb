@@ -22,18 +22,18 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to user_path(current_user), status: :see_other
   end
-end
 
-private
+  private
 
-def booking_params
-  params.require(:booking).permit(:description)
-end
+  def booking_params
+    params.require(:booking).permit(:description)
+  end
 
-def set_chef
-  @chef = Chef.find(params[:chef_id])
-end
+  def set_chef
+    @chef = Chef.find(params[:chef_id])
+  end
 
-def set_user
-  @user = current_user
+  def set_user
+    @user = current_user
+  end
 end
