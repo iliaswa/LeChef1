@@ -7,19 +7,50 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // width: 100%;
+  // display: grid
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 16px;
 }
 
-.square {
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-  border-radius: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
+
+.square img{
+  width: 100%;
+  // background-size: cover;
+  // background-position: center;
+  // width: 100%;
+  // height: 15vw;
+  // border-radius: 1px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+  // font-size: 22px;
+  // color: white;
+}
+
+.square{
+  // background-size: cover;
+  // background-position: center;
+  // width: 100%;
+  // height: 15vw;
+  // border-radius: 1px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+  // font-size: 22px;
+  // color: white;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: black;
+}
+
+.spacing-around {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.white-card {
+  background-color: white;
 }
