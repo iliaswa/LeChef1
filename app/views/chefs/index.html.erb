@@ -5,6 +5,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
+        id: 'my-modified-form',
         placeholder: "Find a chef"
         %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
@@ -19,10 +20,10 @@
 
     <div class="container">
       <div class="cards row px-300">
-        <% @chefs.each_with_index do |chef, index| %>
+        <% @chefs.each do |chef| %>
           <div class="square col-lg-4">
               <%= link_to chef_path(chef), class: 'no-decoration' do %>
-                <img src=<%=@images[index]%>>
+                <img src=<%=@images.sample%>>
                 <div class="white-card py-0.2 px-2 border-gray">
                 <h3> Chef <%= chef.user.first_name %></h3>
                 <h3>Cuisine: <%= chef.cuisine %></h4>
