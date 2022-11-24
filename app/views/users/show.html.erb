@@ -6,9 +6,8 @@
 <h5>Your upcoming bookings:<h5>
   <% current_user.bookings.each do |b| %>
     <li>
-     Chef <%= b.chef.user.first_name %> | Details:
-    </li>
-    <p><%= b.description %></p>
-    <p><%= link_to "Cancel booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+     Chef <%= b.chef.user.first_name %> |<br>
+     Details: <p><%= b.description %></p>
+    <p><%= link_to "Cancel booking", booking_path(b), class: "btn border border-grey", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
   <% end %>
 </ol>
