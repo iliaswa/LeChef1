@@ -13,10 +13,10 @@
 </div class>
 <div class= "container">
 <div class="cards">
-<% @chefs.each do |chef| %>
+<% @chefs.each_with_index do |chef, index| %>
   <div class="card" style="width: 18rem;">
     <% link_to chef_path(chef) %>
-      <img src="https://playswellwithbutter.com/wp-content/uploads/2020/12/Individual-Beef-Wellington-27.jpg" class="card-img-top" alt="...">
+      <img src=<%=@images[index]%> class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= chef.user.first_name %></h5>
           <p class="card-text"><%= chef.cuisine %></p>
