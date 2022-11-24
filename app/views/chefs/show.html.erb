@@ -7,16 +7,12 @@
         <div class="chef">
           <p><%= @chef.user.first_name %></p>
           <p><%= @chef.details %></p>
-          <p><%= @chef.cuisine %></p>
+          <p>Cusine:<%= @chef.cuisine %></p>
         </div>
         <%= image_tag "https://www.hachettebookgroup.com/wp-content/uploads/2017/06/GR.jpg?resize=500%2C700", class: "avatar1", alt: "avatar" %>
       </div>
     </div>
-<<<<<<< HEAD
      <%= link_to "Book #{@chef.user.first_name}", new_user_registration_path(@devise), class: "btn btn-primary" %>
-=======
-     <%= link_to "Book Now",    new_chef_booking_path(@chef), class: "btn btn-primary" %>
->>>>>>> f524c94f228d0fbda63192a149b6cc88b82b11ee
 
   </div>
 
