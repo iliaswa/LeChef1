@@ -1,9 +1,9 @@
-<h1>Welcome, <%= @user.first_name %></h1>
+<h1>Welcome, <%= @user.first_name%>!</h1>
 
 
 
 <ol>
-<strong>Upcoming bookings</strong>
+<h5>Your upcoming bookings:<h5>
   <% current_user.bookings.each do |b| %>
     <li>
      Chef <%= b.chef.user.first_name %> | Details:
