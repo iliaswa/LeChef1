@@ -23,7 +23,16 @@
 .banner-image {
   background-image: url("https://res.cloudinary.com/dehm6bezm/image/upload/v1669131758/hkgjnguemwgigngaeu65.webp");
   object-fit: contain;
-  min-height: 75vh;
+  min-height: 93vh;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.button {
+  padding: 60px;
+
+}
+
+.welcome {
+  padding: 60px;
 }
