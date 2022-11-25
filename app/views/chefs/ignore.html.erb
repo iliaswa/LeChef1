@@ -1,0 +1,26 @@
+<div class="chef-banner text-center">
+  <%# <h2>I could be your private chef!</h2> %>
+</div>
+<div class="container">
+  <div class="text-black">
+    <div class="banner-img">
+    <div class="class">
+      <div class="choose" ><h3>Hello <%= current_user.first_name %> - pick me to bring you culinary perfection!</h3></div>
+        <div class="chef mt-3">
+        <%# <%= image_tag "https://www.hachettebookgroup.com/wp-content/uploads/2017/06/GR.jpg?resize=500%2C700", class: "avatar1", alt: "avatar" %>
+        <div class="chefs-pics row">
+         <%= image_tag "https://culinaryginger.com/wp-content/uploads/Roast-Beef-Dinner-Sunday-Roast-3-.jpg" %>
+        <div class="chef-pic-row"></div>
+        </div>
+          <div class="content pt-10 pt-90">
+          <p>Hi, my name is <%= @chef.user.first_name %>. I've worked in the culinary industry for many years.</p>
+          <p>I am passionate about bringing delicious <%=@chef.cuisine %> food to your table.</p>
+          <p>A little more about me: <%= @chef.details %>. </p>
+          </div>
+    </div>
+        </div>
+     <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark" %>
+      </div>
+    </div>
+  </div>
+</div>

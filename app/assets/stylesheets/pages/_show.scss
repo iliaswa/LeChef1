@@ -1,21 +1,21 @@
 .banner-img {
   background-image:rgba(0,0,0,0.4),rgba(0,0,0,0.4);
   width: 100%;
-  background: url(https://img.freepik.com/premium-photo/black-food-cooking-background-stone-texture-with-sea-salt-pepper-garlic-parsley-abstract-food-background-empty-space-text-can-be-used-food-posters-design-menu-top-view_253362-15861.jpg?w=1800);
+  background: url();
   background-size: cover;
   height: 40vh;
 }
 
+.carousel-item > img{
+  object-fit: cover;
+}
 
 .choose {
-  margin-left: 20px;
   margin-top: 20px;
 }
 
 .avatar1 {
 width: 20%;
-border-radius: 75%;
-margin-left: 50px;
 }
 
 .btn-gradient {
@@ -30,7 +30,6 @@ margin-left: 50px;
 }
 
 .chef {
-margin-left: 20px;
 }
 
 .card-product {
