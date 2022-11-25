@@ -4,9 +4,11 @@
 
 <%= simple_form_for [@chef, @booking] do |f| %>
   <%= f.input :description %>
- <div class="dateform"> <%= f.date_field :booking_time %></div>
-  <%= f.submit "Create Booking", class: "btn btn-dark" %>
-<% end %>
-
-
+    <div>
+      <%= f.date_field :booking_time %>
+    </div>
+      <div id="btn-submit">
+        <%= f.submit "Create Booking", class: "btn btn-dark mt-3"%>
+      </div>
+    <% end %>
 </div>
