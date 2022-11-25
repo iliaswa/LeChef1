@@ -7,11 +7,7 @@ class ChefsController < ApplicationController
     @images = ["https://playswellwithbutter.com/wp-content/uploads/2020/12/Individual-Beef-Wellington-27.jpg", "https://francemotorhomehire.com/wp-content/uploads/2017/12/gourmet-food.jpg", "https://media.timeout.com/images/105604990/750/422/image.jpg", "https://media.timeout.com/images/105544382/750/422/image.jpg", "https://i0.wp.com/beastmag.co.uk/wp-content/uploads/2020/02/Indian-food--scaled.jpg?resize=2000%2C1200&ssl=1", "https://www.visitbuckinghamshire.org/cache/public/article-images-1510659824-a056cf650d824b3a4ec02528ec31f762-CROP-600x450.jpg"]
 
     if params[:query].present?
-      sql_query = <<~SQL
-      chefs.cuisine @@ :query
-      OR chefs.details @@ :query
-      SQL
-      @chefs = Chef.joins(:first_name).where(sql_query, query: "%#{params[:query]}%")
+      @chefs = Chef.global_search(params[:query])
       @images = ["https://playswellwithbutter.com/wp-content/uploads/2020/12/Individual-Beef-Wellington-27.jpg","https://francemotorhomehire.com/wp-content/uploads/2017/12/gourmet-food.jpg", "https://media.timeout.com/images/105604990/750/422/image.jpg", "https://media.timeout.com/images/105544382/750/422/image.jpg", "https://i0.wp.com/beastmag.co.uk/wp-content/uploads/2020/02/Indian-food--scaled.jpg?resize=2000%2C1200&ssl=1", "https://www.visitbuckinghamshire.org/cache/public/article-images-1510659824-a056cf650d824b3a4ec02528ec31f762-CROP-600x450.jpg"]
     else
       @chefs = Chef.all
