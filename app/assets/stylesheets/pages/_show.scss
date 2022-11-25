@@ -6,16 +6,16 @@
   height: 40vh;
 }
 
+.carousel-item > img{
+  object-fit: cover;
+}
 
 .choose {
-  margin-left: 20px;
   margin-top: 20px;
 }
 
 .avatar1 {
 width: 20%;
-border-radius: 75%;
-margin-left: 50px;
 }
 
 .btn-gradient {
@@ -30,5 +30,4 @@ margin-left: 50px;
 }
 
 .chef {
-margin-left: 20px;
 }
