@@ -37,7 +37,12 @@
           I am passionate about bringing delicious <%=@chef.cuisine %> food to your table.</p>
           <p>A little more about me:
           <p><%= @chef.details %>. </p>
-     <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark btn-lg border-white" %>
+          <%if user_signed_in? %>
+            <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark btn-lg border-white" %>
+        </div>
+        <% else %>
+            <%= link_to "Book #{@chef.user.first_name}", new_user_registration_path, class: "btn btn-dark btn-lg border-white" %>
+        <% end %>
         </div>
           </div>
           </div>
