@@ -5,9 +5,9 @@
   <div class="text-black">
     <div class="banner-img">
     <div class="class">
-      <div class="choose" ><h3>Hello <%= current_user.first_name %> - pick me to bring you culinary perfection!</h3></div>
+      <div class="choose text-center"><h2>Welcome!</h2></div>
         <div class="chef mt-3">
-          <div id="carouselExampleControls" class="carousel slide bg-light " data-bs-ride="carousel">
+          <div id="carouselExampleControls" class="carousel slide bg-dark " data-bs-ride="carousel">
             <div class="carousel-inner">
             <% @images[(@chef.id - 1)].each_with_index do |image, index|%>
               <% if index == 0 %>
@@ -31,14 +31,15 @@
             </button>
 </div>
 </div>
-        <div class="chef-pic-row"></div>
+        <div class="chef-pic-row">
+          <div class="content-bg-dark pt-10 pt-90 text-center mt-2">
+          <p>Hi, my name is <%= @chef.user.first_name %>. I've worked in the culinary industry for many years.
+          I am passionate about bringing delicious <%=@chef.cuisine %> food to your table.</p>
+          <p>A little more about me:
+          <p><%= @chef.details %>. </p>
+     <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark btn-lg border-white" %>
         </div>
-          <div class="content pt-10 pt-90">
-          <p>Hi, my name is <%= @chef.user.first_name %>. I've worked in the culinary industry for many years.</p>
-          <p>I am passionate about bringing delicious <%=@chef.cuisine %> food to your table.</p>
-          <p>A little more about me: <%= @chef.details %>. </p>
           </div>
-     <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark" %>
           </div>
         </div>
       </div>
