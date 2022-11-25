@@ -24,6 +24,22 @@
               <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
+</div>
+</div>
+        <div class="chef-pic-row">
+          <div class="content-bg-dark pt-10 pt-90 text-center mt-2">
+          <p>Hi, my name is <%= @chef.user.first_name %>. I've worked in the culinary industry for many years.
+          I am passionate about bringing delicious <%=@chef.cuisine %> food to your table.</p>
+          <p>A little more about me:
+          <p><%= @chef.details %>. </p>
+          <%if user_signed_in? %>
+            <%= link_to "Book #{@chef.user.first_name}", new_chef_booking_path(@chef), class: "btn btn-dark btn-lg border-white" %>
+        </div>
+        <% else %>
+            <%= link_to "Book #{@chef.user.first_name}", new_user_registration_path, class: "btn btn-dark btn-lg border-white" %>
+        <% end %>
+        </div>
+          </div>
           </div>
         </div>
       </div>
