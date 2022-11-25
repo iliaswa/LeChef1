@@ -23,8 +23,8 @@
       <% if @chefs.empty? %>
         <h1>Sorry there are no results for this search...  🧐</h1>
         <% end %>
-          <% @chefs.each do |chef| %>
-          <div class="square col-lg-4">
+        <% @chefs.each do |chef| %>
+          <div class="square col-4">
               <%= link_to chef_path(chef), class: 'no-decoration' do %>
                 <img src=<%=@images[chef.id-1]%>>
                 <div class="white-card py-0.2 px-2 border-gray">
