@@ -1,14 +1,22 @@
-<h1>Welcome, <%= @user.first_name%>!</h1>
+<div class="header"><h1>Welcome, <%= @user.first_name%>!</h1>
+  <div class="upcoming">
+    <h3>Your upcoming bookings:<h3>
+  </div>
+</div>
 
-
-
-<ol>
-<h5>Your upcoming bookings:<h5>
-  <% current_user.bookings.each do |b| %>
-    <li>
-     Chef <%= b.chef.user.first_name %> | Details:
-    </li>
-    <p><%= b.description %></p>
-    <p><%= link_to "Cancel booking", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-  <% end %>
-</ol>
+  <div class="card-product">
+    <div class="boxes">
+     <ol>
+      <% current_user.bookings.each do |b| %>
+        <li>
+        <p>Chef <%= b.chef.user.first_name %></p>
+        <p>Details: <%= b.description %></p>
+        <p>Date: <%= b.booking_time %></p>
+        </li>
+        <p><%= link_to "Cancel booking", booking_path(b), class: "btn border border-grey", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+      <% end %>
+      </ol>
+      </div>
+    </div>
+  </div>
+</div>

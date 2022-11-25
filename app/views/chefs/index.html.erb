@@ -1,30 +1,37 @@
 <div>
-  <%= form_with url: chefs_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a chef"
-      %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div class="container">
+  <div class="spacing-around">
+    <%= form_with url: chefs_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        id: 'my-modified-form',
+        placeholder: "Find a chef"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  </div>
 </div>
+
 <div class="Header text-center">
-<h3></h3>
-</div class>
-<div class= "container">
-<div class="cards">
-<% @chefs.each_with_index do |chef, index| %>
-  <div class="card" style="width: 18rem;">
-    <% link_to chef_path(chef) %>
-      <img src=<%=@images[index]%> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= chef.user.first_name %></h5>
-          <p class="card-text"><%= chef.cuisine %></p>
-          <%= link_to "View Profile", chef_path(chef), class: "btn btn-primary stretched-link"%>
-       </div>
-  <% end %>
+  <h3></h3>
+</div>
+
+    <div class="container">
+      <div class="cards row px-300">
+        <% @chefs.each do |chef| %>
+          <div class="square col-lg-4">
+              <%= link_to chef_path(chef), class: 'no-decoration' do %>
+                <img src=<%=@images[chef.id-1]%>>
+                <div class="white-card py-0.2 px-2 border-gray">
+                <h3> Chef <%= chef.user.first_name %></h3>
+                <h3>Cuisine: <%= chef.cuisine %></h4>
+                </div>
+              <% end %>
+          </div>
+        <% end %>
       </div>
-    </div>
     </div>
 
 
